@@ -1,6 +1,6 @@
 # electron-quick-start
 
-This is a minimal Electron application based on the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start) within the Electron documentation which demonstrates how to use [Radiant Media Player](https://www.radiantmediaplayer.com) with DASH and Widevine DRM.
+This Electron application is based on the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start) within the Electron documentation and demonstrates how to use [Radiant Media Player](https://www.radiantmediaplayer.com) with DASH and Widevine DRM.
 
 A basic Electron application needs just these files:
 
