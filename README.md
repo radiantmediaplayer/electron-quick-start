@@ -1,10 +1,6 @@
 # electron-quick-start
 
-**Clone and run for a quick way to see Electron in action.**
-
-This is a minimal Electron application based on the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start) within the Electron documentation.
-
-**Use this app along with the [Electron API Demos](https://electronjs.org/#get-started) app for API code examples to help you get started.**
+This is a minimal Electron application based on the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start) within the Electron documentation which demonstrates how to use Radiant Media Player with DASH and Widevine DRM.
 
 A basic Electron application needs just these files:
 
@@ -12,34 +8,49 @@ A basic Electron application needs just these files:
 - `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
 - `index.html` - A web page to render. This is the app's **renderer process**.
 
-You can learn more about each of these components within the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start).
+You can learn more about each of these components within the Electron [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start).
 
 ## To Use
-
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+From your command line:
 
 ```bash
 # Clone this repository
-git clone https://github.com/electron/electron-quick-start
+git clone https://github.com/radiantmediaplayer/electron-quick-start.git
 # Go into the repository
 cd electron-quick-start
 # Install dependencies
 npm install
+# Configure index.html with your Radiant Media Player license key
 # Run the app
 npm start
 ```
 
-Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+## Documentation for using Radiant Media Player with DASH and Widevine DRM in an Electron app
 
-## Resources for Learning Electron
+Our set up is based on [castLabs Electron for Content Security](https://github.com/castlabs/electron-releases). In `package.json` you can see that devDependencies for electron points to https://github.com/castlabs/electron-releases#v6.0.4-wvvmp. This set up has been tested with version 6.0.4 of castLabs Electron for Content Security and Radiant Media Player version 5.4.8.
+In `index.html` we have our player configured to use DASH with Widevine DRM.
+In `main.js` we have made changes in order to automatically prepare our application to support Widevine DRM. 
+Please review the above changes before moving forward.
 
-- [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
-- [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
-- [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
-- [electron/simple-samples](https://github.com/electron/simple-samples) - small applications with ideas for taking them further
-- [electron/electron-api-demos](https://github.com/electron/electron-api-demos) - an Electron app that teaches you how to use Electron
-- [hokein/electron-sample-apps](https://github.com/hokein/electron-sample-apps) - small demo apps for the various Electron APIs
+## Supported Widevine DRM feature
+
+While this demo app just shows the core principle for using Radiant Media Player with DASH and Widevine DRM, the following features are supported:
+- Playback of Widevine DRM encrypted content with DASH or HLS 
+- Support for Widevine Verified Media Path
+- Features generally available with Radiant Media Player when using [DASH and Widevine DRM](https://www.radiantmediaplayer.com/docs/latest/dash-drm-documentation.html)
+
+To achieve this the necessary Widevine DRM components will be installed on first launch and enabled as an option for playback of DRM protected content using common EME APIs.
+For more advanced use-cases see [castLabs Electron for Content Security documentation](https://github.com/castlabs/electron-releases).
+
+Currently unsupported and untested feature:
+- Protected storage of licenses for offline playback scenarios
+
+## Supported environments
+- Windows 7+
+- macOS 10.10+
+- Linux Ubuntu 12.04+, Fedora 21+ and Debian 8+ (lacking support for persistent licenses due to VMP limitations)
 
 ## License
 
-[CC0 1.0 (Public Domain)](LICENSE.md)
+[CC0 1.0 (Public Domain)](LICENSE.md) for this GitHub repository.
+Radiant Media Player is a commercial HTML5 video player with [its own terms of use](https://www.radiantmediaplayer.com/terms-of-service.html).

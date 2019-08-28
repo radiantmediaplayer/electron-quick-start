@@ -1,0 +1,25 @@
+This file includes licensing information for:
+
+- Radiant Media Player
+The lastest version of Radiant Media Player terms of service can be viewed online at: 
+https://www.radiantmediaplayer.com/terms-of-service.html
+The lastest version of Radiant Media Player Privacy Policy can be viewed online at: 
+https://www.radiantmediaplayer.com/privacy-policy.html
+
+Licensing information for Radiant Media Player 3rd-party dependencies can be found online at the following locations:
+
+- hls.js | https://github.com/dailymotion/hls.js 
+Apache 2.0 License available at https://github.com/video-dev/hls.js/blob/master/LICENSE
+
+- Shaka Player | https://github.com/google/shaka-player 
+Apache 2.0 License available at https://github.com/google/shaka-player/blob/master/LICENSE
+
+- three.js | https://github.com/mrdoob/three.js
+MIT License available at https://github.com/mrdoob/three.js/blob/dev/LICENSE
+
+- vtt.js | https://github.com/mozilla/vtt.js
+Apache 2.0 License available at https://github.com/mozilla/vtt.js/blob/master/LICENSE
+
+The above dependencies are open-source projects with business-friendly licenses allowing commercial use and distribution. 
+As a distributor we took care of complying with the terms of these licenses and you do not need to take extra steps as long as you do not distribute the above mentioned dependencies.
+Radiant Media Player terms of services forbids the distribution, redistribution or resell of Radiant Media Player software.

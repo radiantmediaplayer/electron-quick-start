@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+</head>
+
+<body>
+  <h1>Hello World!</h1>
+  <p>
     We are using Node.js <span id="node-version"></span>,
     Chromium <span id="chrome-version"></span>,
     and Electron <span id="electron-version"></span>.
+  </p>
+  <p>Here comes our player container</p>
+  <div id="rmpPlayer"></div>
+  <!-- Include player library -->
+  <!-- In this case we use self-hosting for Radiant Media Player files to speed up start-up process with Electron -->
+  <script src="./rmp/js/rmp-shaka.min.js"></script>
+  <script>
+    var src = {
+      dash: 'https://storage.googleapis.com/shaka-demo-assets/angel-one-widevine/dash.mpd'
+    };
+    var settings = {
+      licenseKey: 'your-license-key',
+      src: src,
+      width: 640,
+      height: 360,
+      pathToRmpFiles: './rmp',
+      shakaDrm: {
+        servers: {
+          'com.widevine.alpha': 'https://cwip-shaka-proxy.appspot.com/no_auth'
+        }
+      }
+    };
+    var elementID = 'rmpPlayer';
+    var rmp = new RadiantMP(elementID);
+    rmp.init(settings);
+  </script>
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
-  </body>
+  <!-- You can also require other files to run in this process -->
+  <script src="./renderer.js"></script>
+</body>
+
 </html>
