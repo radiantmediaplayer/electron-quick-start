@@ -26,7 +26,7 @@ app.on('widevine-update-pending', (currentVersion, pendingVersion) => {
 });
 app.on('widevine-error', (error) => {
   console.log('Widevine installation encountered an error: ' + error);
-  process.exit(1)
+  process.exit(1);
 });
 
 // on app ready createWindow is called
