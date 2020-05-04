@@ -16,8 +16,8 @@
   <p>Here comes our player container</p>
   <div id="rmpPlayer"></div>
   <!-- Include player library -->
-  <!-- In this case we use self-hosting for Radiant Media Player files to speed up start-up process with Electron -->
-  <script src="./rmp/js/rmp-shaka.min.js"></script>
+  <!-- For this demo we use Radiant Media Player cloud player but for production apps you should use self-hosted player files -->
+  <script src="https://cdn.radiantmediatechs.com/rmp/5.7.10/js/rmp-shaka.min.js"></script>
   <script>
     var src = {
       dash: 'https://storage.googleapis.com/shaka-demo-assets/angel-one-widevine/dash.mpd'
@@ -27,7 +27,6 @@
       src: src,
       width: 640,
       height: 360,
-      pathToRmpFiles: './rmp',
       shakaDrm: {
         servers: {
           'com.widevine.alpha': 'https://cwip-shaka-proxy.appspot.com/no_auth'
